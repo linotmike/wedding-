@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AuthForm from "./pages/AuthForm";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <h1>Navbar</h1>
+      <Routes>
+        <Route path="/" element={<h2>home page</h2>} />
+        <Route path="/login" element={<AuthForm usage="login" />} />
+        <Route path="/signup" element={<AuthForm usage="signup" />} />
+      </Routes>
+    </Router>
   );
 }
 
